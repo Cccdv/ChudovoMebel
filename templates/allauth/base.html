@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{% block head_title %}{% endblock %}</title>
+  {% block extra_head %}
+  {% endblock %}
+</head>
+
+<body>
+  <header class="container-fluid fixed-top">
+    <div class="row bg-white pt-lg-2 d-none d-lg-flex">
+      <nav class="navbar navbar-expand-lg navbar-light w-100">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
+          aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        {% include 'includes/mobile-top-header.html' %}
+        {% include 'includes/main-nav.html' %}
+      </nav>
+    </div>
+  </header>
+
+  {% if messages %}
+  <div>
+    <strong>Messages:</strong>
+    <ul>
+      {% for message in messages %}
+      <li>{{message}}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  <div>
+    <strong>Menu:</strong>
+    <ul>
+      {% if user.is_authenticated %}
+      <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
+      <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
+      {% else %}
+      <li><a href="{% url 'account_login' %}">Sign In</a></li>
+      <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
+      {% endif %}
+    </ul>
+  </div>
+  {% block content %}
+  {% endblock %}
+  {% endblock %}
+  {% block extra_body %}
+  {% endblock %}
+</body>
+
+</html>

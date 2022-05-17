@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h1 class="home-text">Новости</h1>
+            <hr class="w-50 mb-1">
+        </div>
+    </div>
+    <br>
+    <ul class="home-text text-left blog-container">
+        {% for post in object_list %}
+        <li class="home-text text-left p-3"><a class="home-text" href="{% url 'blog-article' post.pk %}">
+                <h2>{{ post.title }}</h2>
+            </a> Автор:
+            {{ post.author }} <small><a href="{% url 'update_post' post.pk %}" a>Редактировать</a></small>
+            |
+            <small><a class="text-danger " href="{% url 'delete_post' post.pk %}" a>Удалить</a></small><br>
+            <p class="home-text text-left">{{ post.body|slice:"200"|safe }}</p>
+        </li>
+        <br>
+        {% endfor %}
+    </ul>
+
+</div>
+
+{% endblock %}

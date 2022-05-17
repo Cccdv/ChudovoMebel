@@ -1,0 +1,528 @@
+[
+    {
+        "model": "products.category",
+        "pk": 1,
+        "fields": {
+            "name": "tables",
+            "friendly_name": "Tables"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 2,
+        "fields": {
+            "name": "sofas",
+            "friendly_name": "Sofas"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 3,
+        "fields": {
+            "name": "chairs",
+            "friendly_name": "Chairs"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 4,
+        "fields": {
+            "name": "accessories",
+            "friendly_name": "Accessories"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 5,
+        "fields": {
+            "name": "wardrobes",
+            "friendly_name": "Wardrobes"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 6,
+        "fields": {
+            "name": "bed_frames",
+            "friendly_name": "Bed Frames"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 7,
+        "fields": {
+            "name": "office_desk",
+            "friendly_name": "Office Desks"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 8,
+        "fields": {
+            "name": "coffee_tables",
+            "friendly_name": "Coffee Tables"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 1,
+        "fields": {
+            "category": 1,
+            "sku": "001",
+            "name": "Lakka Beech Wood Dining Table",
+            "description": "Reclaimed Beech wood dining table. This design is simplicity at its best. However the finish is nothing short of world class. Perfect for hosting dinner parties or use as a family dining table. Seats up to 6. Dimensions: W: 1800mm H: 700mm",
+            "price": "400.00",
+            "rating": "4.60",
+            "image_url": "https://images.unsplash.com/photo-1583590965777-68dff2f80253?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "image": "diningtable.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 2,
+        "fields": {
+            "category": 1,
+            "sku": "002",
+            "name": "Lakka Reclaimed Wood Dining Table",
+            "description": "Reclaimed Beech wood dining table. This design is simplicity at its best. However the finish is nothing short of world class. Perfect for hosting dinner parties or use as a family dining table. Seats up to 6. Dimensions: W: 1800mm H: 700mm",
+            "price": "400.00",
+            "rating": "4.10",
+            "image_url": "https://images.unsplash.com/photo-1554671557-0def73b2e67e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2466&q=80",
+            "image": "diningtable1.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 3,
+        "fields": {
+            "category": 1,
+            "sku": "003",
+            "name": "Lakka Oak Dining Table",
+            "description": "Reclaimed Beech wood dining table. This design is simplicity at its best. However the finish is nothing short of world class. Perfect for hosting dinner parties or use as a family dining table. Seats up to 6. Dimensions: W: 1800mm H: 700mm",
+            "price": "400.00",
+            "rating": "4.90",
+            "image_url": "https://images.unsplash.com/photo-1560184897-0e5d96d86acd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+            "image": "diningtable3.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 4,
+        "fields": {
+            "category": 1,
+            "sku": "004",
+            "name": "Lakka Pine Dining Table",
+            "description": "Reclaimed Beech wood dining table. This design is simplicity at its best. However the finish is nothing short of world class. Perfect for hosting dinner parties or use as a family dining table. Seats up to 6. Dimensions: W: 1800mm H: 700mm",
+            "price": "400.00",
+            "rating": "4.80",
+            "image_url": "https://images.unsplash.com/photo-1601628828688-632f38a5a7d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=911&q=80",
+            "image": "diningtable4.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 5,
+        "fields": {
+            "category": 2,
+            "sku": "005",
+            "name": "Lakka Grey Three Seater Sofa",
+            "description": "Three seater, light grey sofa. Designed and commissioned by Lakke Furniture, we give you the sturdiest, most comfortable seating experience. All woodwork and upholstery done by us. It is the perfect mix of style and comfort! Dimensions: W: 1500mm H: 600mm",
+            "price": "999.00",
+            "rating": "4.30",
+            "image_url": "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+            "image": "sofa.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 6,
+        "fields": {
+            "category": 2,
+            "sku": "006",
+            "name": "Lakka Emerald Three Seater Sofa",
+            "description": "Gorgeous three seat sofa in emerald green. Originally commissioned by a customer, we loved it so much that we wanted you to one too! It has an old school vibe but fits into any modern lounge setting. Dimensions: W: 1700mm H: 550mm",
+            "price": "1120.00",
+            "rating": "4.30",
+            "image_url": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+            "image": "sofa1.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 7,
+        "fields": {
+            "category": 2,
+            "sku": "007",
+            "name": "Lakka Khaki Two Seater Sofa",
+            "description": "This Khaki coloured two seater sofa is perfect for the minimalist look. It is compact and allows you to have comfort without dominating the room! Dimensions: W: 1350mm H: 600mm",
+            "price": "550.00",
+            "rating": "4.60",
+            "image_url": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+            "image": "sofa2.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 8,
+        "fields": {
+            "category": 3,
+            "sku": "008",
+            "name": "Lakka Two Yellow Chairs Set",
+            "description": "Two gorgeous low set chairs perfect for sitting by the window with a coffee. Mahogany legs and frame with handcrafted upholstery for the most comfortable seat in your house.",
+            "price": "200.00",
+            "rating": "3.90",
+            "image_url": "https://images.unsplash.com/photo-1493150134366-cacb0bdc03fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+            "image": "chairset.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 9,
+        "fields": {
+            "category": 3,
+            "sku": "009",
+            "name": "Lakka Two Silver Chairs Set",
+            "description": "Set of silver chairs that will make any room stand out. All handcrafted, from the wooden chair/frame to the stylish velour upholstery. Get this unique set now.",
+            "price": "150.00",
+            "rating": "4.50",
+            "image_url": "https://images.unsplash.com/photo-1520453714493-d85cdd7b033b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1027&q=80",
+            "image": "chairset1.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 10,
+        "fields": {
+            "category": 3,
+            "sku": "010",
+            "name": "Lakka Two Oak Chairs Set",
+            "description": "Two high backed oak chairs perfect for a large dining table. They'll make you feel like the king or queen of your own castle!",
+            "price": "320.00",
+            "rating": "4.90",
+            "image_url": "https://images.unsplash.com/photo-1620910423054-e60130a0632e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
+            "image": "chairset2.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 11,
+        "fields": {
+            "category": 3,
+            "sku": "011",
+            "name": "Lakka Lounge Chair",
+            "description": "Sunburnt orange lounge chair which is perfect for you to snuggle up with a good book or catch up on the latest great tv shows. This is not only stylish but high comfort!",
+            "price": "325.00",
+            "rating": "4.10",
+            "image_url": "https://images.unsplash.com/photo-1599697686548-d39f7c80174c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=666&q=80",
+            "image": "loungechair.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 12,
+        "fields": {
+            "category": 4,
+            "sku": "012",
+            "name": "Lakka Rectangular Chopping Board",
+            "description": "Large rectangular chopping board with chrome feet to keep it sturdy while chopping. This is handmade and truly will set your kitchen apart from others.",
+            "price": "25.00",
+            "rating": "3.60",
+            "image_url": "https://images.unsplash.com/photo-1609210885628-4c6a41a8caf7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
+            "image": "choppingboard.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 13,
+        "fields": {
+            "category": 4,
+            "sku": "013",
+            "name": "Lakka Circular Chopping Board",
+            "description": "Small circular chopping board. Perfect for when cooking for yourself and need the quick washing up time!",
+            "price": "20.00",
+            "rating": "4.20",
+            "image_url": "https://images.unsplash.com/photo-1556909211-36987daf7b4d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+            "image": "choppingboard1.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 14,
+        "fields": {
+            "category": 4,
+            "sku": "014",
+            "name": "Lakka Wooden Chest",
+            "description": "This magnificient chest is going to make all your friends jealous. Stylish, practical and can be used as a coffee table too. This chest will set you apart from the rest! Dimensions: W: 600mm H: 500mm",
+            "price": "525.00",
+            "rating": "4.70",
+            "image_url": "https://images.unsplash.com/photo-1517467139951-f5a925c9f9de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80",
+            "image": "chest.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 15,
+        "fields": {
+            "category": 4,
+            "sku": "015",
+            "name": "Lakka Wooden Clothes Rail",
+            "description": "Need a wardrobe but lacking floor space? This is ideal for you. It is compact yet stylish. You will fit all your best clothes on there to show off to whoever is looking!",
+            "price": "115.00",
+            "rating": "3.80",
+            "image_url": "https://images.pexels.com/photos/3489129/pexels-photo-3489129.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "image": "clothesrail.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 16,
+        "fields": {
+            "category": 4,
+            "sku": "016",
+            "name": "Lakka Mirror Frame",
+            "description": "This large mirror frame is perfect for any room! It has a handcrafted frame and custom made mirror. Not only will you look good in it, but so will the entire room behind you!",
+            "price": "190.00",
+            "rating": "4.60",
+            "image_url": "https://images.pexels.com/photos/3489131/pexels-photo-3489131.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "image": "frame.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 17,
+        "fields": {
+            "category": 4,
+            "sku": "017",
+            "name": "Lakka Bath Tray",
+            "description": "Do you like to relax in the bath with a coffee and a book? It can be awkward to reach around your entire bathroom for these items. So look no further and get this beautiful bath tray! It'll be the best purchase you ever make!",
+            "price": "75.00",
+            "rating": "4.90",
+            "image_url": "https://images.pexels.com/photos/4099354/pexels-photo-4099354.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "image": "bathtable.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 18,
+        "fields": {
+            "category": 4,
+            "sku": "018",
+            "name": "Lakka Nest of Tables",
+            "description": "Handcrafted nest of tables, designed so you have a table for every occassion. Whether you're just relaxing with a coffee or have guests over for game night, then these are perfect",
+            "price": "100.00",
+            "rating": "3.60",
+            "image_url": "https://images.unsplash.com/photo-1611486212355-d276af4581c0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+            "image": "nesttables.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 19,
+        "fields": {
+            "category": 5,
+            "sku": "019",
+            "name": "Lakka Simple Pine Wardrobe",
+            "description": "A classic design made from pine wood. All the compartments you need to keep yourself organised in your day to day life. Dimensions: W: 1500mm H: 1600mm D: 700mm",
+            "price": "500.00",
+            "rating": "4.30",
+            "image_url": "https://images.pexels.com/photos/7061419/pexels-photo-7061419.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+            "image": "wardrobe.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 20,
+        "fields": {
+            "category": 5,
+            "sku": "020",
+            "name": "Lakka Two Piece Corner Wardrobe",
+            "description": "Originally a commission from one of our loyal customers, we loved this corner, open plan design so much, we wanted anyone to have it! This isn't your usual wardrobe, so you'll need to buy more clothes! Dimensions per piece: W: 1750mm H: 1500mm D: 350mm",
+            "price": "1300.00",
+            "rating": "5.00",
+            "image_url": "https://images.unsplash.com/photo-1530411554903-7e745b9f1f6d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
+            "image": "wardrobe1.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 21,
+        "fields": {
+            "category": 5,
+            "sku": "021",
+            "name": "Lakka Cedar Retro Wardrobe",
+            "description": "A beautiful retro 70's design wardrobe. Made from reclaimed cedar and is purposely made to look distressed. You won't need anymore than this to clean up your bedroom floor. Dimensions: W: 1000mm H: 1400mm D: 400mm",
+            "price": "350.00",
+            "rating": "4.40",
+            "image_url": "https://images.unsplash.com/photo-1558997519-83ea9252edf8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
+            "image": "wardrobe2.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 22,
+        "fields": {
+            "category": 6,
+            "sku": "022",
+            "name": "Lakka Reclaimed Wood Bed Frame",
+            "description": "A simple low level bed frame. All made from old scaffold boards, this bed is not only stylish but possibly the sturdiest bed on the market! King size is priced, can be made in other sizes on enquiry.",
+            "price": "450.00",
+            "rating": "4.40",
+            "image_url": "https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80",
+            "image": "bedframe.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 23,
+        "fields": {
+            "category": 6,
+            "sku": "023",
+            "name": "Lakka Classic Bed Frame",
+            "description": "This pine bed frame is as classic as it gets. Four legs and a head board. That's all you need! You can't find better for this price. King size is priced, can be made in other sizes on enquiry.",
+            "price": "525.00",
+            "rating": "4.70",
+            "image_url": "https://images.unsplash.com/photo-1616627561839-074385245ff6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1094&q=80",
+            "image": "bedframe1.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 24,
+        "fields": {
+            "category": 6,
+            "sku": "024",
+            "name": "Lakka Oak Bed Frame",
+            "description": "Our premium bed frame. This oak masterpice is low to the floor, has a huge head board and is finished with a mat black paint. This bed is modern, stylish and built to last. King size is priced, can be made in other sizes on enquiry.",
+            "price": "700.00",
+            "rating": "4.80",
+            "image_url": "https://images.unsplash.com/flagged/photo-1556438758-8d49568ce18e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2553&q=80",
+            "image": "bedframe2.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 25,
+        "fields": {
+            "category": 7,
+            "sku": "025",
+            "name": "Lakka Beech Office Desk",
+            "description": "This office desk is small enough for a small office and big enough for all your desk needs. It has some storage under the legs and a mounted set of drawers on top. Perfect for a home office. Dimensions: W: 1000mm H: 700mm D: 400mm",
+            "price": "350.00",
+            "rating": "4.10",
+            "image_url": "https://images.unsplash.com/photo-1520085601670-ee14aa5fa3e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+            "image": "officedesk.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 26,
+        "fields": {
+            "category": 7,
+            "sku": "026",
+            "name": "Lakka Silver Finish Office Desk",
+            "description": "Office desk with a silver finish to suit all you Mac users out there! This desk has a storage basket built into the legs. Dimensions: W: 1200mm H: 700mm D: 500mm",
+            "price": "300.00",
+            "rating": "4.30",
+            "image_url": "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1536&q=80",
+            "image": "officedesk2.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 27,
+        "fields": {
+            "category": 7,
+            "sku": "027",
+            "name": "Lakka Mahogany Office Desk",
+            "description": "This desk is a cut above the rest. We use mahogany for the best quality and finish it in a dark stain. This desk will look great in any office. Dimensions: W: 1250mm H: 700mm D: 600mm",
+            "price": "450.00",
+            "rating": "4.70",
+            "image_url": "https://images.unsplash.com/photo-1575318633968-0383e7d07ca0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80",
+            "image": "officedesk3.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 29,
+        "fields": {
+            "category": 8,
+            "sku": "029",
+            "name": "Lakka Oak Coffee Table",
+            "description": "This coffee table is simplicity meets intricate. The wood top finish is the finest oak and has protective staining on to defend coffee marks! The legs are a steel rectangle for a modern and classic look.",
+            "price": "180.00",
+            "rating": "4.50",
+            "image_url": "https://images.unsplash.com/photo-1604061986761-d9d0cc41b0d1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80",
+            "image": "coffeetable.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 30,
+        "fields": {
+            "category": 8,
+            "sku": "030",
+            "name": "Lakka Walnut Coffee Table",
+            "description": "Similar to our Oak table in design this table has similar steel legs, but is made with walnut wood and has two drawers for storage.",
+            "price": "250.00",
+            "rating": "4.10",
+            "image_url": "https://images.unsplash.com/photo-1560184897-67f4a3f9a7fa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80",
+            "image": "coffeetable1.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 31,
+        "fields": {
+            "category": 8,
+            "sku": "031",
+            "name": "Lakka Reclaimed Wood Coffee Table",
+            "description": "This small table is made entirely from reclaimed wood and the legs are carved from the roots of and old tree. This deisng is unique and a talking point for any visitors!",
+            "price": "175.00",
+            "rating": "4.60",
+            "image_url": "https://images.unsplash.com/photo-1596639103739-91d96a629071?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2508&q=80",
+            "image": "coffeetable2.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 32,
+        "fields": {
+            "category": 8,
+            "sku": "032",
+            "name": "Lakka Simple Coffee Table",
+            "description": "The simplest of simple. Four pin legs and 3 wooden boards. That's all you need to place your coffee and book on.",
+            "price": "80.00",
+            "rating": "4.10",
+            "image_url": "https://images.unsplash.com/photo-1581428982868-e410dd047a90?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
+            "image": "coffeetable3.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 33,
+        "fields": {
+            "category": 8,
+            "sku": "033",
+            "name": "Lakka Offset Coffee Table",
+            "description": "This small coffee table has offset circular legs. If you're looking for something completely different, this is the one for you!",
+            "price": "110.00",
+            "rating": "3.70",
+            "image_url": "https://images.pexels.com/photos/9374488/pexels-photo-9374488.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "image": "coffeetable4.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 34,
+        "fields": {
+            "category": 8,
+            "sku": "034",
+            "name": "Lakka Circle Stack Coffee Table",
+            "description": "This small masterpiece will leave all your pals asking 'Where did you get that?' This is hand carved for an amazing one of a kind look.",
+            "price": "300.00",
+            "rating": "4.80",
+            "image_url": "https://images.unsplash.com/photo-1619911013257-8f1fbc919fc9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
+            "image": "coffeetable5.jpg"
+        }
+    }
+]

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h1 class="home-text">{{ post.title }}</h1>
+        </div>
+    </div>
+    <small class="home-text">Автор: {{ post.author }}</small><br>
+    <small><a href="{% url 'update_post' post.pk %}" a>Редактировать</a></small>
+    |
+    <small><a class="text-danger " href="{% url 'delete_post' post.pk %}" a>Удалить</a></small><br>
+    <hr class="w-50 mb-1">
+    <br>
+    <p class="home-text align-center">
+
+        {% if post.header_image %}
+        <img class="blog-img" src="{{ post.header_image.url }}"><br><br>
+        {% endif %}
+
+        {{ post.body|safe }}</p>
+    <br>
+    <br>
+
+    <a href="{% url 'blog' %}" class="btn btn-outline-black rounded-0 mt-5">
+        <span class="icon">
+            <i class="fas fa-chevron-left"></i>
+        </span>
+        <span class="home-text text-uppercase">Вернуться в блог</span>
+    </a>
+</div>
+{% endblock %}

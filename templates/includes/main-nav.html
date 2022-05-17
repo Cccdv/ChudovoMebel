@@ -1,0 +1,71 @@
+<div class="collapse navbar-collapse text-lg-left" id="topnav">
+    <ul class="navbar-nav w-auto">
+        <li class="nav-item">
+            <a class="logo-font nav-link home-text" href="{% url 'home' %}" id="contact-link" aria-haspopup="true"
+                aria-expanded="false">
+                О компании
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="logo-font nav-link home-text" href="{% url 'products' %}" id="all-products-link"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Товары
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">Сортировка товаров по цене</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">Сортировка товаров по категории</a>
+                <a href="{% url 'products' %}" class="dropdown-item">Все товары</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="logo-font nav-link home-text" href="#" id="furniture-link" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Категории
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="furniture-link">
+                <a href="{% url 'products' %}?category=tables" class="dropdown-item">Столы</a>
+                <a href="{% url 'products' %}?category=sofas" class="dropdown-item">Диваны</a>
+                <a href="{% url 'products' %}?category=chairs" class="dropdown-item">Стулья</a>
+                <a href="{% url 'products' %}?category=wardrobes" class="dropdown-item">Шкафы</a>
+                <a href="{% url 'products' %}?category=bed_frames" class="dropdown-item">Кровати</a>
+                <a href="{% url 'products' %}?category=office_desk" class="dropdown-item">Кухни</a>
+                <a href="{% url 'products' %}?category=coffee_tables" class="dropdown-item">Тумбочки</a>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a class="logo-font nav-link home-text" href="{% url 'products' %}?category=accessories" id="accessory-link"
+                aria-haspopup="true" aria-expanded="false">
+                Аксессуары
+            </a>
+
+        </li>
+        <li class="nav-item dropdown">
+            <a class="logo-font nav-link home-text" href="{% url 'blog' %}" id="contact-link" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Новости компании
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="furniture-link">
+                <a href="{% url 'blog' %}" class="dropdown-item">Все статьи</a>
+                <a href="{% url 'add_post' %}" class="dropdown-item">Добавить статью</a>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="col-lg-6 col-sm-12 text-center text-lg-right">
+    <form method="GET" action="{% url 'products' %}">
+        <div class="input-group w-100">
+            <input class="form-control border border-black rounded-0" type="text" name="q"
+                placeholder="Поиск по названию">
+            <div class="input-group-append">
+                <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                    <span class="icon">
+                        <i class="fas fa-search"></i>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+</div>

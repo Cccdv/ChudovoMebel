@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="home-text text-center">Написать статью...</h1>
+    <hr>
+    <br>
+    <div class="row justify-content-center align-items-center">
+        <div class="form-group">
+            <form class="text-center" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form.as_p }}
+                <button class="home-text btn border-black text-uppercase">Статья</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

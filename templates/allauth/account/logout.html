@@ -1,0 +1,24 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+
+{% block inner_content %}
+<div class="container-fluid text-center">
+  <hr>
+  <h2 class="home-text text-center logo-font mb-4">{% trans "Выйти с аккаунта" %}</h2>
+  <hr>
+  <p class="home-text text-center">{% trans 'Вы действительно хотите выйти?' %}</p>
+
+  <form class="text-center" method="post" action="{% url 'account_logout' %}">
+    {% csrf_token %}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+    <a class="btn btn-outline-black rounded-0" href="{% url 'home' %}">Назад</a>
+    <button class="btn rounded-0 home-text" type="submit">{% trans 'Выйти' %}</button>
+  </form>
+</div>
+
+{% endblock %}

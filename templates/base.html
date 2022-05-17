@@ -1,0 +1,215 @@
+{% load static %}
+
+<!doctype html>
+<html lang="ru">
+
+<head>
+  {% block meta %}
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% endblock %}
+
+  {% block extra_meta %}
+  {% endblock %}
+
+  {% block corecss %}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  {% endblock %}
+
+  {% block extra_css %}
+  {% endblock %}
+
+  {% block corejs %}
+  <script src="https://kit.fontawesome.com/e508081f78.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+  <script src="https://js.stripe.com/v3/"></script>
+  {% endblock %}
+
+  {% block extra_js %}
+  {% endblock %}
+
+  <title>Чудово Мебель {% block extra_title %}{% endblock %}</title>
+</head>
+
+<body>
+
+  <header class="container-fluid fixed-top">
+    <div class="row bg-white d-none d-lg-flex">
+      <div class="col-12 col-lg-6 text-center text-lg-left">
+        <a href="{% url 'home' %}" class="nav-link">
+            <h1 class="nav-logo home-text">Чудово<strong> Мебель</strong></h1></a>
+        </a>
+      </div>
+      <div class="col-12 col-lg-6 text-center text-lg-left">
+        <ul class="list-inline list-unstyled text-center text-lg-right">
+          <li class="list-inline-item dropdown">
+            <a class="home-text nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              <div class="text-center">
+                <div><i class="fas fa-user-circle fa-lg"></i></div>
+                <p class="nav-auth my-0">Мой аккаунт</p>
+              </div>
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+              {% if request.user.is_authenticated %}
+              {% if request.user.is_superuser %}
+              <a href="{% url 'add_product' %}" class="dropdown-item">Управление позициями</a>
+              {% endif %}
+              <a href="{% url 'profile' %}" class="dropdown-item">Мой профиль</a>
+              <a href="{% url 'account_logout' %}" class="dropdown-item">Выйти</a>
+              {% else %}
+              <a href="{% url 'account_signup' %}" class="dropdown-item">Регистрация</a>
+              <a href="{% url 'account_login' %}" class="dropdown-item">Войти</a>
+              {% endif %}
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <a class="{% if grand_total %}text-info font-weight-bold{% else %}home-text{% endif %} nav-link"
+              href="{% url 'view_bag' %}">
+              <div class="text-center">
+                <div><i class="fas fa-shopping-cart fa-lg"></i></div>
+                <p class="nav-auth my-0">
+                  {% if grand_total %}
+                  {{ grand_total|floatformat:0 }}₽
+                  {% else %}
+                  0₽
+                  {% endif %}
+                </p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row bg-white">
+      <nav class="navbar navbar-expand-lg navbar-light w-100">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topnav" aria-controls="topnav"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        {% include 'includes/mobile-top-header.html' %}
+        {% include 'includes/main-nav.html' %}
+      </nav>
+    </div>
+  </header>
+
+  {% if messages %}
+  <div class="message-container">
+    {% for message in messages %}
+    {% with message.level as level %}
+    {% if level == 40 %}
+    {% include 'includes/toasts/toast_error.html' %}
+    {% elif level == 30 %}
+    {% include 'includes/toasts/toast_warning.html' %}
+    {% elif level == 25 %}
+    {% include 'includes/toasts/toast_success.html' %}
+    {% else %}
+    {% include 'includes/toasts/toast_info.html' %}
+    {% endif %}
+    {% endwith %}
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% block page_header %}
+  {% endblock %}
+
+  {% block content %}
+  {% endblock %}
+
+  {% block postloadjs %}
+  <script type="text/javascript">
+    $('.toast').toast('show');
+  </script>
+  {% endblock %}
+
+  <!-- Footer -->
+  <footer class="page-footer font-small mdb-color pt-4">
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+
+      <!-- Footer links -->
+      <div class="row text-center text-md-left mt-3 pb-3">
+
+        <!-- Grid column -->
+        <div class="home-text col-md-6 col-12 mx-auto mt-3">
+          <h6 class="text-uppercase mb-1 font-weight-bold">Мебельная фабрика на карте</h6>
+          <p> <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/org/chudovskaya_mebelnaya_fabrika/194396452717/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Чудовская мебельная фабрика</a><a href="https://yandex.ru/maps/10925/chudovo/category/furniture_factory/184106634/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Чудовская мебельная фабрика</a><a href="https://yandex.ru/maps/10925/chudovo/category/cabinet_furniture/184107869/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Чудовская мебельная фабрика</a><iframe src="https://yandex.ru/map-widget/v1/-/CCU5QGuqSC" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div></p>
+        </div>
+        <!-- Grid column -->
+
+        <hr class="w-100 clearfix d-md-none">
+
+        <!-- Grid column -->
+        <hr class="w-100 clearfix d-md-none">
+
+        <!-- Grid column -->
+        <div class="home-text col-md-6 col-12 mx-auto mt-3 text-md-right">
+          <h6 class="text-uppercase mb-1 font-weight-bold">Контакты</h6>
+          <p>
+            <i class="fas fa-home mr-3"></i> 174210, Новгородская область, г. Чудово, Грузинское ш., стр. 7</p>
+          <p>
+            <i class="fas fa-envelope mr-3"></i> chudovomebel@gmail.com</p>
+          <p>
+            <i class="fas fa-phone mr-3"></i> 8(816)654-56-66</p>
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Footer links -->
+
+      <!-- Grid row -->
+      <div class="row d-flex align-items-center">
+
+        <!-- Grid column -->
+        <div class="col-sm-3 col-md-7 col-lg-8">
+
+          <!--Copyright-->
+          <p class="home-text text-lg-left">© 2022 Copyright:
+            <strong> Чудово Мебель</strong>
+            </a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-sm-3 col-md-5 col-lg-4 ml-lg-0">
+
+          <!-- Social buttons -->
+          <div class="home-text text-lg-right">
+            <ul class="list-unstyled list-inline text-lg-right">
+              <li class="list-inline-item">
+                <a class="btn-floating btn-sm rgba-white-slight mx-1 home-text" href="https://vk.com/chudovskaja/" target="_blank">
+                  <i class="fab fa-vk"></i>
+                </a>
+            </ul>
+          </div>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+  </footer>
+  <!-- Footer -->
+
+</body>
+
+</html>

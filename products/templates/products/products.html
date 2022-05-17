@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+j
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h1 class="home-text">Наша продукция</h1>
+            <hr class="w-50 mb-1">
+        </div>
+    </div>
+    <div class="row">
+        <div class="product-container col-10 offset-1">
+            <div class="row mt-1 mb-2">
+                <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                    <div class="sort-select-wrapper w-50">
+                        <select id="sort-selector"
+                            class="custom-select custom-select-sm border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                            <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Сортировать по...
+                            </option>
+                            <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Цене
+                                (От низкой к высокой)</option>
+                            <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Цене
+                                (От высокой к низкой)</option>
+                            <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Название по алфавиту
+                                (А-Я)</option>
+                            <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Название по алфавиту
+                                (Я-А)</option>
+                            <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>
+                                Категории по алфавиту (А-Я)</option>
+                            <option value="category_desc"
+                                {% if current_sorting == 'category_desc' %}selected{% endif %}>Категории по алфавиту (Я-А)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 order-md-first">
+                    <p class="home-text text-muted mt-3 text-center text-md-left">
+                        {% if search_term or current_categories or current_sorting != 'None_None' %}
+                        <span class="home-text small"><a class="home-text" href="{% url 'products' %}">Все позиции</a>
+                            | </span>
+                        {% endif %}
+                        {{ products|length }} Позиций{% if search_term %} найдено с именем
+                        <strong>"{{ search_term }}"</strong>{% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    <table>
+        <div class="row col-12 row-card">
+            {% for product in products %}
+            <div class="card-order col-12">
+                <div class="card h-100 border-0">
+                    <div class="card-img card-order">
+                        {% if product.image %}
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        </a>
+                        {% else %}
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
+                                alt="{{ product.name }}">
+                        </a>
+                        {% endif %}
+                    </div>
+                    <div class="card-body pb-0">
+                        <p class="home-text text-center mb-0">{{ product.name }}</p>
+                    </div>
+                    <div class="card-footer bg-white pt-0 border-0 text-center">
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="home-text text-center lead mb-0 text-center font-weight-bold">
+                                    {{ product.price }}₽</p>
+                                {% if request.user.is_superuser %}
+                                <small class="ml-3">
+                                    <a href="{% url 'edit_product' product.id %}">Редактировать</a> |
+                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Удалить</a>
+                                </small>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:1 %}
+            <div class="col-12 d-sm-none mb-5">
+                <hr>
+            </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:2 %}
+            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                <hr>
+            </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:3 %}
+            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                <hr>
+            </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:4 %}
+            <div class="col-12 d-none d-xl-block mb-5">
+                <hr>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="btt-button shadow-sm border border-black">
+    <a class="btt-link d-flex h-100">
+        <i class="fas fa-arrow-up home-text mx-auto my-auto"></i>
+    </a>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+    $('.btt-link').click(function (e) {
+        window.scrollTo(0, 0)
+    })
+</script>
+
+<script type="text/javascript">
+    $('#sort-selector').change(function () {
+        var selector = $(this);
+        var currentUrl = new URL(window.location);
+
+        var selectedVal = selector.val();
+        if (selectedVal != "reset") {
+            var sort = selectedVal.split("_")[0];
+            var direction = selectedVal.split("_")[1];
+
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+
+            window.location.replace(currentUrl);
+        }
+    })
+</script>
+{% endblock %}

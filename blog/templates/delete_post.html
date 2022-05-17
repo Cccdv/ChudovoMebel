@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<h1 class="home-text text-center">Удалить статью</h1>
+<br>
+<h2 class="home-text text-center">Удалить: {{ post.title }}</h2>
+<div class="row justify-content-center align-items-center">
+    <div class="form-group">
+        <form class="text-center" method="POST">
+            {% csrf_token %}
+            <strong class="home-text text-center">Вы уверены что хотите удалить статью???</strong>
+            <br>
+            <br>
+            <button class="home-text btn border-black text-uppercase">Удалить</button>
+    </div>
+</div>
+{% endblock %}
