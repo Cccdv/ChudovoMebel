@@ -1,1 +1,1 @@
-web: gunicorn lakka_furniture.wsgi:application
+web: gunicorn lakka_furniture.wsgi --log-file -
