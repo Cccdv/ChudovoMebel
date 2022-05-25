@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-12 col-md-6">
             <hr>
-            <h2 class="home-text logo-font mb-4">Управление позициями</h2>
+            <h2 class="home-text logo-font mb-4">Упралвение продуктом</h2>
             <h5 class="home-text text-muted">Редактировать позицию</h5>
             <hr>
         </div>
@@ -28,7 +28,7 @@
                 {% csrf_token %}
                 {{ form | crispy }}
                 <div class="text-right">
-                    <a class="home-text btn btn-outline-black rounded-0" href="{% url 'products' %}">Отменить</a>
+                    <a class="home-text btn btn-outline-black rounded-0" href="{% url 'products' %}">Отмена</a>
                     <button class="home-text btn btn-black rounded-0" type="submit">Обновить продукт</button>
                 </div>
             </form>

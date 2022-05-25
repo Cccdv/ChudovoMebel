@@ -1,1 +1,1 @@
-Boutique Ado Confirmation for Order Number {{ order.order_number }}
+Boutique Ado Подтверждение номера заказа {{ order.order_number }}

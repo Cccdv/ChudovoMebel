@@ -13,12 +13,12 @@
 
 <h1 class="home-text text-center">Удалить статью</h1>
 <br>
-<h2 class="home-text text-center">Удалить: {{ post.title }}</h2>
+<h2 class="home-text text-center">Удаление статьи: {{ post.title }}</h2>
 <div class="row justify-content-center align-items-center">
     <div class="form-group">
         <form class="text-center" method="POST">
             {% csrf_token %}
-            <strong class="home-text text-center">Вы уверены что хотите удалить статью???</strong>
+            <strong class="home-text text-center">Вы уверены что хотите удалить статью?</strong>
             <br>
             <br>
             <button class="home-text btn border-black text-uppercase">Удалить</button>

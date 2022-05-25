@@ -1,2 +1,2 @@
 {% load i18n %}
-{% blocktrans %}Ваш email должен быть верифицирован.{% endblocktrans %}
+{% blocktrans %}Ваша электронная почта должен быть верифицирована.{% endblocktrans %}

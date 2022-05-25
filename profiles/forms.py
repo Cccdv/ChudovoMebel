@@ -17,8 +17,8 @@ class UserProfileForm(forms.ModelForm):
             'default_phone_number': 'Телефон',
             'default_postcode': 'Индекс',
             'default_town_or_city': 'Город',
-            'default_street_address1': 'Адрес 1',
-            'default_street_address2': 'Адрес 2',
+            'default_street_address1': 'Улица',
+            'default_street_address2': 'Дом',
             'default_county': 'Страна',
         }
 

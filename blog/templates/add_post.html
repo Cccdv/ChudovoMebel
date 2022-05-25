@@ -11,7 +11,7 @@
 
 {% block content %}
 <div class="container">
-    <h1 class="home-text text-center">Написать статью...</h1>
+    <h1 class="home-text text-center">Написать статью</h1>
     <hr>
     <br>
     <div class="row justify-content-center align-items-center">
@@ -20,7 +20,7 @@
                 {% csrf_token %}
                 {{ form.media }}
                 {{ form.as_p }}
-                <button class="home-text btn border-black text-uppercase">Статья</button>
+                <button class="home-text btn border-black text-uppercase">Опубликовать</button>
         </div>
     </div>
 </div>

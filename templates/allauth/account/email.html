@@ -9,7 +9,7 @@
 <h2 class="logo-font mb-4">{% trans "E-mail Addresses" %}</h2>
 <hr>
 {% if user.emailaddress_set.all %}
-<p>{% trans 'The following e-mail addresses are associated with your account:' %}</p>
+<p>{% trans 'С вашей учетной записью связаны следующие адреса электронной почты:' %}</p>
 
 <form action="{% url 'account_email' %}" class="email_list" method="post">
   {% csrf_token %}
@@ -25,38 +25,38 @@
 
         {{ emailaddress.email }}
         {% if emailaddress.verified %}
-        <span class="verified">{% trans "Verified" %}</span>
+        <span class="verified">{% trans "Верефицированный" %}</span>
         {% else %}
-        <span class="unverified">{% trans "Unverified" %}</span>
+        <span class="unverified">{% trans "Не верефецированный" %}</span>
         {% endif %}
-        {% if emailaddress.primary %}<span class="primary">{% trans "Primary" %}</span>{% endif %}
+        {% if emailaddress.primary %}<span class="primary">{% trans "Основной" %}</span>{% endif %}
       </label>
     </div>
     {% endfor %}
 
     <div class="buttonHolder">
-      <button class="secondaryAction" type="submit" name="action_primary">{% trans 'Make Primary' %}</button>
-      <button class="secondaryAction" type="submit" name="action_send">{% trans 'Re-send Verification' %}</button>
-      <button class="primaryAction" type="submit" name="action_remove">{% trans 'Remove' %}</button>
+      <button class="secondaryAction" type="submit" name="action_primary">{% trans 'Сделать основным' %}</button>
+      <button class="secondaryAction" type="submit" name="action_send">{% trans 'Переслать верефикацию' %}</button>
+      <button class="primaryAction" type="submit" name="action_remove">{% trans 'Удалить' %}</button>
     </div>
 
   </fieldset>
 </form>
 
 {% else %}
-<p><strong>{% trans 'Warning:'%}</strong>
-  {% trans "You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc." %}
+<p><strong>{% trans 'Ошибка:'%}</strong>
+  {% trans "В настоящее время у вас нет настроенного адреса электронной почты. Вам следует добавить адрес электронной почты, чтобы вы могли получать уведомления, сбросить пароль и т.д." %}
 </p>
 
 {% endif %}
 
 
-<h2>{% trans "Add E-mail Address" %}</h2>
+<h2>{% trans "Добавить электронную почту" %}</h2>
 
 <form method="post" action="{% url 'account_email' %}" class="add_email">
   {% csrf_token %}
   {{ form|crispy }}
-  <button class="btn rounded-0 home-text" name="action_add" type="submit">{% trans "Add E-mail" %}</button>
+  <button class="btn rounded-0 home-text" name="action_add" type="submit">{% trans "Добавить электронную почту" %}</button>
 </form>
 
 {% endblock %}
@@ -65,7 +65,7 @@
 {% block extra_body %}
 <script type="text/javascript">
   (function () {
-    var message = "{% trans 'Do you really want to remove the selected e-mail address?' %}";
+    var message = "{% trans 'Вы действительно хотите удалить выбранный адрес электронной почты?' %}";
     var actions = document.getElementsByName('action_remove');
     if (actions.length) {
       actions[0].addEventListener("click", function (e) {

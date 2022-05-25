@@ -51,7 +51,7 @@
                     <p class="home-text my-0 small text-muted">Количество: {{ item.quantity }}</p>
                 </div>
                 <div class="col-3 text-right">
-                    <p class="home-text my-0 small text-muted">{{ item.product.price | calc_subtotal:item.quantity }}₽
+                    <p class="home-text my-0 small text-muted">{{ item.product.price | calc_subtotal:item.quantity | floatformat:0 }}₽
                     </p>
                 </div>
             </div>
@@ -64,9 +64,9 @@
                         <p class="my-0">Grand Total:</p> -->
                 </div>
                 <div class="home-text col-3">
-                    <p class="home-text my-0">{{ total | floatformat:2 }}₽</p>
-                    <!-- <p class="my-0">{{ delivery | floatformat:2 }}₽</p>
-                        <p class="my-0"><strong>{{ grand_total | floatformat:2 }}₽</strong></p> -->
+                    <p class="home-text my-0">{{ total | floatformat:0 }}₽</p>
+                    <!-- <p class="my-0">{{ delivery | floatformat:0 }}₽</p>
+                        <p class="my-0"><strong>{{ grand_total | floatformat:0 }}₽</strong></p> -->
                 </div>
             </div>
         </div>
@@ -75,12 +75,12 @@
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-5">
-                    <legend class="home-text fieldset-label small text-black px-2 w-auto">ФИО, Email</legend>
+                    <legend class="home-text fieldset-label small text-black px-2 w-auto">ФИО, Email:</legend>
                     {{ order_form.full_name | as_crispy_field }}
                     {{ order_form.email | as_crispy_field }}
                 </fieldset>
                 <fieldset class="rounded px-3 mb-5">
-                    <legend class="home-text fieldset-label small text-black px-2 w-auto">Адрес</legend>
+                    <legend class="home-text fieldset-label small text-black px-2 w-auto">Ваш адрес:</legend>
                     {{ order_form.phone_number | as_crispy_field }}
                     {{ order_form.street_address1 | as_crispy_field }}
                     {{ order_form.street_address2 | as_crispy_field }}
@@ -95,7 +95,7 @@
                             name="save-info" checked>
                         {% else %}
                         <label class="home-text form-check-label" for="id-save-info">
-                            <a class="home-text text-info" href="{% url 'account_signup' %}">Создать аккаунт</a> или
+                            <a class="home-text text-info" href="{% url 'account_signup' %}">Создать новый аккаунт</a> или
                             <a class="home-text text-info" href="{% url 'account_login' %}">Войти в аккаунт</a> для сохранения заказа
                         </label>
                         {% endif %}
@@ -126,7 +126,7 @@
                         <span class="home-text font-weight-bold">Изменить заказ</span>
                     </a>
                     <button id="submit-button" class="btn btn-black rounded-0">
-                        <span class="home-text font-weight-bold">Завершить заказ</span>
+                        <span class="home-text font-weight-bold">Оплатить заказ</span>
                         <span class="icon">
                             <i class="fas fa-lock"></i>
                         </span>
@@ -136,7 +136,7 @@
                             <i class="fas fa-exclamation-circle"></i>
                         </span>
                         <span class="home-text">С вашей карты будет произведена оплата
-                            <strong>{{ grand_total|floatformat:2 }}₽</strong></span>
+                            <strong>{{ grand_total|floatformat:0 }}₽</strong></span>
                     </p>
                 </div>
             </form>

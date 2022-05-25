@@ -8,12 +8,12 @@
     </div>
 </div>
 {% endblock %}
-j
+
 {% block content %}
 <div class="container-fluid">
     <div class="row">
         <div class="col text-center mt-3">
-            <h1 class="home-text">Наша продукция</h1>
+            <h1 class="home-text">Товары</h1>
             <hr class="w-50 mb-1">
         </div>
     </div>
@@ -27,33 +27,32 @@ j
                             <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Сортировать по...
                             </option>
                             <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Цене
-                                (От низкой к высокой)</option>
+                                (по возрастанию)</option>
                             <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Цене
-                                (От высокой к низкой)</option>
-                            <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Название по алфавиту
-                                (А-Я)</option>
-                            <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Название по алфавиту
-                                (Я-А)</option>
+                                (по убыванию)</option>
+                            <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Имя
+                                (по возрастанию)</option>
+                            <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Имя
+                                (по убыванию)</option>
                             <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>
-                                Категории по алфавиту (А-Я)</option>
+                                Категория (по возрастанию)</option>
                             <option value="category_desc"
-                                {% if current_sorting == 'category_desc' %}selected{% endif %}>Категории по алфавиту (Я-А)</option>
+                                {% if current_sorting == 'category_desc' %}selected{% endif %}>Категория (по убыванию)</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 order-md-first">
                     <p class="home-text text-muted mt-3 text-center text-md-left">
                         {% if search_term or current_categories or current_sorting != 'None_None' %}
-                        <span class="home-text small"><a class="home-text" href="{% url 'products' %}">Все позиции</a>
+                        <span class="home-text small"><a class="home-text" href="{% url 'products' %}">Все товары</a>
                             | </span>
                         {% endif %}
-                        {{ products|length }} Позиций{% if search_term %} найдено с именем
+                        Товаров: {{ products|length }}  {% if search_term %} найден в поиске по названию:
                         <strong>"{{ search_term }}"</strong>{% endif %}
                     </p>
                 </div>
             </div>
         </div>
-    <table>
         <div class="row col-12 row-card">
             {% for product in products %}
             <div class="card-order col-12">
@@ -77,14 +76,13 @@ j
                         <div class="row">
                             <div class="col-12">
                                 <p class="home-text text-center lead mb-0 text-center font-weight-bold">
-                                    {{ product.price }}₽</p>
+                                 {{ product.price|floatformat:0 }}₽</p>
                                 {% if request.user.is_superuser %}
                                 <small class="ml-3">
                                     <a href="{% url 'edit_product' product.id %}">Редактировать</a> |
                                     <a class="text-danger" href="{% url 'delete_product' product.id %}">Удалить</a>
                                 </small>
                                 {% endif %}
-
                             </div>
                         </div>
                     </div>

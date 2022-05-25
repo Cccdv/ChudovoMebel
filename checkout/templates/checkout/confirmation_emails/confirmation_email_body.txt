@@ -1,20 +1,20 @@
-Hello {{ order.full_name }}!
+Здравствуйте, {{ order.full_name }}!
 
-This is a confirmation of your order at Lakka Furniture. Your order information is below:
+Это письмо содержит подтверждение вашего заказа. Информация по вашему заказу представлена ниже:
 
-Order Number: {{ order.order_number }}
-Order Date: {{ order.date }}
+Номер заказа: {{ order.order_number }}
+Дата заказа: {{ order.date }}
 
-Order Total: ${{ order.order_total }}
+Сумма заказа: ${{ order.order_total }}
 
-Your order will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
+Ваш заказ будет отправлен по адресу: {{ order.street_address1 }} в городе {{ order.town_or_city }}, {{ order.country }}.
 
-We've got your phone number on file as {{ order.phone_number }}.
+Ваш номер телефона указанный в заказе: {{ order.phone_number }}.
 
-If you have any questions, feel free to contact us at {{ contact_email }}.
+Если у вас есть вопросы по заказу, пожалуйста свяжитесь с нами по электронному адресу: {{ contact_email }}.
 
-Thank you for your order!
+Спасибо за ваш заказ!
 
-Sincerely,
+Искренне,
 
-Lakka Furniture
+Ваша Чудово Мебель.

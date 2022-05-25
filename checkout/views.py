@@ -29,9 +29,9 @@ def cache_checkout_data(request):
         })
         return HttpResponse(status=200)
     except Exception as e:
-        messages.error(request, ('Sorry, your payment cannot be '
-                                 'processed right now. Please try '
-                                 'again later.'))
+        messages.error(request, ('Извините, платеж не может '
+                                 'быть обработан прямо сейчас. Пожалуйста попробуйте '
+                                 'немного позже.'))
         return HttpResponse(content=e, status=400)
 
 
@@ -82,9 +82,9 @@ def checkout(request):
                             order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your bag wasn't "
-                        "found in our database. "
-                        "Please call us for assistance!")
+                        "Один из продуктов в корзине "
+                        "не найден в каталоге. "
+                        "Пожалуйста свяжитесь с нами!")
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
@@ -94,13 +94,13 @@ def checkout(request):
             return redirect(reverse('checkout_success',
                                     args=[order.order_number]))
         else:
-            messages.error(request, ('There was an error with your form. '
-                                     'Please double check your information.'))
+            messages.error(request, ('Возникла ошибка с сохранением ваших данных. '
+                                     'Пожалуйста перепроверьте заполненные данные.'))
     else:
         bag = request.session.get('bag', {})
         if not bag:
             messages.error(request,
-                           "There's nothing in your bag at the moment")
+                           "Ваша корзина пустая")
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
@@ -176,9 +176,9 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
-    messages.success(request, f'Order successfully processed! \
-        Your order number is {order_number}. A confirmation \
-        email will be sent to {order.email}.')
+    messages.success(request, f'Заказ принят! \
+        Ваш номер заказа {order_number}. Подтверждение \
+      заказа было отправлено на {order.email}.')
 
     if 'bag' in request.session:
         del request.session['bag']

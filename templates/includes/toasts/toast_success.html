@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-9">
                     <p class="home-text my-0"><strong>{{ item.product.name }}</strong></p>
-                    <p class="home-text my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                    <p class="home-text my-0 small text-muted">Количество: {{ item.quantity }}</p>
                 </div>
             </div>
             {% endfor %}
@@ -37,8 +37,8 @@
             <div class="home-text col">
                 <strong>
                     <p class="home-text mt-3 mb-1 text-black">
-                        Total:
-                        <span class="float-right">£{{ total|floatformat:2 }}</span>
+                        Всего:
+                        <span class="float-right">{{ total|floatformat:0 }}₽</span>
                     </p>
                 </strong>
                 <a href="{% url 'view_bag' %}" class="btn btn-black btn-block rounded-0">

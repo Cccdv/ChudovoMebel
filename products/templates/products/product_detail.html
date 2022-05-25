@@ -29,8 +29,8 @@
         </div>
         <div class="col-12">
             <div class="product-details-container mb-5 mt-md-5">
-                <p class="home-text lead mb-0 text-center font-weight-bold">{{ product.price }}₽ <br> Рейтинг:
-                    {% if product.get_rating == 0 %}Нет рейтинга
+                <p class="home-text lead mb-0 text-center font-weight-bold">{{ product.price|floatformat:0 }}₽ <br> Оценка:
+                    {% if product.get_rating == 0 %}Нет оценок...
                     {% else %}{{ product.get_rating|floatformat:1 }}{% endif %}</p>
                 <p class="home-text text-center mt-3">{{ product.description }}</p>
                 {% if product.category %}
@@ -50,7 +50,7 @@
                     {% csrf_token %}
                     <div class="form-row">
                         <div class="col-12">
-                            <p class="home-text text-left mt-3"><strong>Количество</strong></p>
+                            <p class="home-text text-left mt-3"><strong>Количество:</strong></p>
                             <div class="form-group w-25">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
@@ -98,20 +98,20 @@
 
 <div class="container">
 
-    <h2 class="home-text text-center">Отзывы:</h2>
+    <h2 class="home-text text-center">Отзывы</h2>
 
     <div class="reviews-wrapper text-center home-text">
         {% for review in product.reviews.all %}
         <div class="notification space-below">
             <p>
-                <strong>Stars: </strong>{{ review.stars }}
+                <strong>Оценка: </strong>{{ review.stars }}
             </p>
 
             {{ review.content }}
         </div>
         {% empty %}
         <div class="notification space-below text-center home-text">
-            Нет оценок.....
+            Нет отзывов...
         </div>
         {% endfor %}
     </div>
@@ -121,7 +121,7 @@
             {% csrf_token %}
 
             <div class="field text-center home-text">
-                <h3>Оцените продукт:</h3>
+                <h3>Ваша оценка</h3>
 
 
                 <div class="control text-center home-text">
@@ -139,7 +139,7 @@
             </div>
             <br>
             <div class="field text-center home-text">
-                <h3>Пожалуйста напишите ваш отзыв ниже:</h3>
+                <h3>Напишите ваш отзыв:</h3>
                 <br>
                 <div class="control">
                     <textarea class="textarea home-text" name="content"></textarea>
@@ -147,7 +147,7 @@
             </div>
             <div class="field text-center home-text">
                 <div class="control ">
-                    <button class="is-success home-text btn btn-black rounded-0 text-uppercase mt-5">Подтвердить</button>
+                    <button class="is-success home-text btn btn-black rounded-0 text-uppercase mt-5">Опубликовать</button>
                 </div>
             </div>
         </form>

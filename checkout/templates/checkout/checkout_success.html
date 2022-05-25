@@ -21,7 +21,7 @@
             <hr>
             <h2 class="home-text logo-font mb-4">Спасибо за покупку</h2>
             <hr>
-            <p class="home-text">Информация об покупке будет выслана на ваш почтовый адрес
+            <p class="home-text">Информация о заказе будет выслана на ваш почтовый адрес
                 <strong>{{ order.email }}</strong>.</p>
         </div>
     </div>
@@ -31,7 +31,7 @@
             <div class="order-confirmation-wrapper p-2 border">
                 <div class="row">
                     <div class="col">
-                        <small class="home-text text-muted">Информация об покупке:</small>
+                        <small class="home-text text-muted">Информация о заказе:</small>
                     </div>
                 </div>
 
@@ -55,7 +55,7 @@
 
                 <div class="row">
                     <div class="col">
-                        <small class="home-text text-muted">Детали покупки:</small>
+                        <small class="home-text text-muted">Детали заказа:</small>
                     </div>
                 </div>
 
@@ -67,7 +67,7 @@
                         </p>
                     </div>
                     <div class="col-12 col-md-8 text-md-right">
-                        <p class="home-text small mb-0">{{ item.quantity }} @ ${{ item.product.price }} each</p>
+                        <p class="home-text small mb-0">{{ item.quantity }} x {{ item.product.price | floatformat:0}}₽ </p>
                     </div>
                 </div>
                 {% endfor %}
@@ -167,7 +167,7 @@
                         <p class="mb-0 home-text font-weight-bold">Итого:</p>
                     </div>
                     <div class="col-12 col-md-8 text-md-right">
-                        <p class="home-text mb-0">{{ order.order_total }}₽</p>
+                        <p class="home-text mb-0"> {{ order.order_total|floatformat:0 }}₽</p>
                     </div>
                 </div>
 
@@ -185,7 +185,7 @@
                         <p class="mb-0 home-text font-weight-bold">Всего:</p>
                     </div>
                     <div class="col-12 col-md-8 text-md-right">
-                        <p class="home-text mb-0">{{ order.grand_total }}₽</p>
+                        <p class="home-text mb-0">{{ order.grand_total|floatformat:0 }}₽</p>
                     </div>
                 </div>
             </div>
