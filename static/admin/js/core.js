@@ -107,7 +107,7 @@ function findPosY(obj) {
             I: this.getTwoDigitTwelveHour(),
             m: this.getTwoDigitMonth(),
             M: this.getTwoDigitMinute(),
-            p: (this.getHours() >= 12) ? 'PM' : 'AM',
+            p: (this.getHours() >= 12) ? '' : '',
             S: this.getTwoDigitSecond(),
             w: '0' + this.getDay(),
             x: this.toLocaleDateString(),

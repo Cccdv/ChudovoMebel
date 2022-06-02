@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="db" uuid="1249cf34-a11a-4bf3-842e-0db626d88079">
+    <data-source source="LOCAL" name="db" uuid="cc17b8e9-a58d-40b0-8770-7a28978c4688">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\zyxel\Desktop\lakkafurniture-main\db.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\zyxel\Desktop\chudovomebel\db.sqlite3</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <libraries>
         <library>
@@ -16,11 +16,11 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="db [2]" uuid="cc17b8e9-a58d-40b0-8770-7a28978c4688">
+    <data-source source="LOCAL" name="project" uuid="44e9f5f6-db52-4e6a-9a61-601767121d0a">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\zyxel\Desktop\chudovomebel\db.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\zyxel\Desktop\chudovomebel\mysite\project.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <libraries>
         <library>

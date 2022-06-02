@@ -30,6 +30,11 @@ ALLOWED_HOSTS = ['herokuappname.herokuapp.com', '*']
 # Application definition
 
 INSTALLED_APPS = [
+'cms',
+'menus',
+'treebeard',
+'djangocms_admin_style',
+'sekizai',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,13 +59,18 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+'django.middleware.locale.LocaleMiddleware',
+'cms.middleware.user.CurrentUserMiddleware',
+'cms.middleware.page.CurrentPageMiddleware',
+'cms.middleware.toolbar.ToolbarMiddleware',
+'cms.middleware.language.LanguageCookieMiddleware',
 ]
 
 ROOT_URLCONF = 'chudovo.urls'
@@ -77,6 +87,8 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'cms.context_processors.cms_settings',
+                'sekizai.context_processors.sekizai',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -157,7 +169,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
