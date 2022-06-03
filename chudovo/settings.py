@@ -134,16 +134,17 @@ WSGI_APPLICATION = 'chudovo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd227tiit39o0m1',
-        'USER': 'egtvdovazlztew',
-        'PASSWORD': 'b3915e828363fe61718605fb9b8281d232bb22f977dcbaa36c348e761793dd5d',
-        'HOST': 'ec2-63-32-248-14.eu-west-1.compute.amazonaws.com',
-        'PORT': '5432',
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
