@@ -99,7 +99,6 @@ PyJWT==2.1.0
 pylama==7.7.1
 pylint==2.9.3
 pyparsing==2.4.7
-pypiwin32==223
 pyrsistent==0.18.0
 python-dateutil==2.8.1
 python3-openid==3.2.0
