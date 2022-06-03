@@ -16,12 +16,13 @@ class Category(models.Model):
     def get_friendly_name(self):
         return self.friendly_name
 
+
 class Product(models.Model):
     """Products data model"""
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.SET_NULL, help_text="Выберете категорию")
     sku = models.CharField('Артикул:', max_length=254, null=True, blank=True)
-    name = models.CharField('Назвaние', max_length=254)
+    name = models.CharField('Название', max_length=254)
     description = models.TextField('Описание')
     price = models.DecimalField('Цена', max_digits=7, decimal_places=0)
     image_url = models.URLField('Ссылка на изображение:', max_length=1024, null=True, blank=True)
