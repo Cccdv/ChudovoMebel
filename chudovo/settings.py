@@ -208,14 +208,14 @@ if 'DEVELOPMENT' in os.environ:
     DEFAULT_FROM_EMAIL = 'chudovomebel@gmail.com'
 else:
 
-    DEFAULT_FROM_EMAIL = 'mebelchudovo@yandex.ru'
-    SERVER_EMAIL = 'mebelchudovo@yandex.ru'
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_USE_TLS = True
     EMAIL_HOST = 'smtp.yandex.ru'
-    EMAIL_HOST_USER = 'mebelchudovo@yandex.ru'
-    EMAIL_HOST_PASSWORD = 'glbifnatwxefievj'
     EMAIL_PORT = 465
+    EMAIL_HOST_USER = "mebelchudovo@yandex.ru"
+    EMAIL_HOST_PASSWORD = "zqkotqdqmlhpttoc"
+    EMAIL_USE_TLS = False
+    EMAIL_USE_SSL = True
+    SERVER_EMAIL = EMAIL_HOST_USER
+    DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 if 'USE_AWS' in os.environ:
     # # Cache control
