@@ -6,5 +6,6 @@
     <mapping directory="$PROJECT_DIR$/chudovomebel" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/lakka_furniture/ChudovoMebel3" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/lakka_furniture/svelte" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/mebelchudovo" vcs="Git" />
   </component>
 </project>

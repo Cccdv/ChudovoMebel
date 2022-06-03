@@ -1,0 +1,60 @@
+.StripeElement,
+.stripe-style-input {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 40px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  background-color: #f2f2f2;
+  -webkit-box-shadow: 0 1px 3px 0 #e6ebf1;
+          box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  -webkit-transition: -webkit-box-shadow 150ms ease;
+  transition: -webkit-box-shadow 150ms ease;
+  -o-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease, -webkit-box-shadow 150ms ease;
+}
+
+.StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+  -webkit-box-shadow: 0 1px 3px 0 #cfd7df;
+          box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.stripe-style-input::-webkit-input-placeholder {
+  color: #f9bc50;
+}
+
+.stripe-style-input::-moz-placeholder {
+  color: #f9bc50;
+}
+
+.stripe-style-input:-ms-input-placeholder {
+  color: #f9bc50;
+}
+
+.stripe-style-input::-ms-input-placeholder {
+  color: #f9bc50;
+}
+
+.stripe-style-input::placeholder {
+  color: #f9bc50;
+}
+
+.fieldset-label {
+  position: relative;
+  right: .5rem;
+}
+
+#payment-form .form-control,
+#card-element {
+  color: #f9bc50;
+  border: 1px solid #000;
+}
