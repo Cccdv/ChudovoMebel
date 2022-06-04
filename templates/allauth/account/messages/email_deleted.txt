@@ -1,2 +1,2 @@
 {% load i18n %}
-{% blocktrans %}Удалённый адрес электронной почты {{email}}.{% endblocktrans %}
+{% blocktrans %}Ваш адрес электронной почты успешно удалён {{email}}.{% endblocktrans %}

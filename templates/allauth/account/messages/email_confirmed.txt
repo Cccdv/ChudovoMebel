@@ -1,2 +1,2 @@
 {% load i18n %}
-{% blocktrans %}Ваш аккаунт верифицирован {{email}}.{% endblocktrans %}
+{% blocktrans %}Ваш аккаунт успешно подтверждён {{email}}.{% endblocktrans %}

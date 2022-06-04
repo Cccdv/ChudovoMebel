@@ -1,9 +1,9 @@
-{% load account %}{% user_display user as user_display %}{% load i18n %}{% autoescape off %}{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}Здравствуйте от {{ site_name }}!
+{% load account %}{% user_display user as user_display %}{% load i18n %}{% autoescape off %}{% blocktrans %}Здравствуйте!
 
-Вы получили это сообщение потому-что пользователь {{ user_display }} указал ваш email адрес для верификации аккаунта.
+Вы получили это сообщение потому-что пользователь {{ user_display }} указал ваш email адрес.
 
-Для подтверждения перейдите по ссылке {{ activate_url }}
+Чтобы подтвердить ваш адрес электронной почты и начать пользоваться нашим веб-сайтом, пожалуйста перейдите по этой ссылке: {{ activate_url }}
 {% endblocktrans %}
-{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}Thank you from {{ site_name }}!
-{{ site_domain }}{% endblocktrans %}
+{% blocktrans %}Спасибо, ваш mebelchudovo.herokuapp.com!
+{% endblocktrans %}
 {% endautoescape %}

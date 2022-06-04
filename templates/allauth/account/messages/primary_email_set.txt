@@ -1,2 +1,2 @@
 {% load i18n %}
-{% blocktrans %}Основной адрес электронной почты установлен.{% endblocktrans %}
+{% blocktrans %}Адрес электронной почты успешно изменён.{% endblocktrans %}
