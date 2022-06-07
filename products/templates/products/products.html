@@ -30,14 +30,14 @@
                                 (по возрастанию)</option>
                             <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Цене
                                 (по убыванию)</option>
-                            <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Имя
+                            <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Имени
                                 (по возрастанию)</option>
-                            <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Имя
+                            <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Имени
                                 (по убыванию)</option>
                             <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>
-                                Категория (по возрастанию)</option>
+                                Категории (по возрастанию)</option>
                             <option value="category_desc"
-                                {% if current_sorting == 'category_desc' %}selected{% endif %}>Категория (по убыванию)</option>
+                                {% if current_sorting == 'category_desc' %}selected{% endif %}>Категории (по убыванию)</option>
                         </select>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                         <span class="home-text small"><a class="home-text" href="{% url 'products' %}">Все товары</a>
                             | </span>
                         {% endif %}
-                        Товаров: {{ products|length }}  {% if search_term %} найден в поиске по названию:
+                        Товаров: {{ products|length }}  {% if search_term %} найдено в поиске по названию:
                         <strong>"{{ search_term }}"</strong>{% endif %}
                     </p>
                 </div>

@@ -10,12 +10,12 @@ class Post(models.Model):
     """Blog form data"""
     title = models.CharField ('Заголовок', max_length=255)
     header_image = models.ImageField('Изображение',null=True, blank=True, upload_to="images/")
-    author = models.ForeignKey(User, on_delete=models.CASCADE, help_text="Выберете автора")
+    author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="Автор")
     body = RichTextField('Описание',blank=True, null=True)
 
     class Meta:
         verbose_name_plural = "Новости"
-        verbose_name = "Новость"
+        verbose_name = "новость"
 
     def __str__(self):
         return self.title + ' | Автор новости: ' + str(self.author)

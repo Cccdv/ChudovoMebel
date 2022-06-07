@@ -13,7 +13,7 @@ from profiles.models import UserProfile
 class Order(models.Model):
     order_number = models.CharField('Номер заказа', max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
-                                     null=True, blank=True, related_name='orders', help_text='Выберете профиль')
+                                     null=True, blank=True, related_name='orders', verbose_name="Выберите профиль:")
     full_name = models.CharField('ФИО', max_length=50, null=False, blank=False)
     email = models.EmailField('Электронная почта', max_length=254, null=False, blank=False)
     phone_number = models.CharField('Номер телефона', max_length=20, null=False, blank=False)
@@ -34,7 +34,7 @@ class Order(models.Model):
 
     class Meta:
         verbose_name_plural = "Заказы товаров"
-
+        verbose_name = "заказ"
     def _generate_order_number(self):
         """
         Generate a random, unique order number using UUID
@@ -66,9 +66,9 @@ class Order(models.Model):
 
 class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False,
-                              on_delete=models.CASCADE, related_name='lineitems')
+                              on_delete=models.CASCADE, related_name='lineitems', verbose_name='Заказ')
     product = models.ForeignKey(
-        Product, null=False, blank=False, on_delete=models.CASCADE)
+        Product, null=False, blank=False, on_delete=models.CASCADE, verbose_name='Товар')
     quantity = models.IntegerField('Количество', null=False, blank=False, default=0)
     lineitem_total = models.DecimalField('Сумма заказа ₽',
         max_digits=6, decimal_places=0, null=False, blank=False, editable=False)
@@ -82,4 +82,4 @@ class OrderLineItem(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'Артикул {self.product.sku} , заказ {self.order.order_number}'
+        return f'Артикул: {self.product.sku} , № Заказа: {self.order.order_number}'

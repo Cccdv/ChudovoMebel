@@ -25,9 +25,9 @@
 
         {{ emailaddress.email }}
         {% if emailaddress.verified %}
-        <span class="verified">{% trans "Верефицированный" %}</span>
+        <span class="verified">{% trans "Подтверждённый" %}</span>
         {% else %}
-        <span class="unverified">{% trans "Не верефецированный" %}</span>
+        <span class="unverified">{% trans "Не подтверждённый" %}</span>
         {% endif %}
         {% if emailaddress.primary %}<span class="primary">{% trans "Основной" %}</span>{% endif %}
       </label>
@@ -36,7 +36,7 @@
 
     <div class="buttonHolder">
       <button class="secondaryAction" type="submit" name="action_primary">{% trans 'Сделать основным' %}</button>
-      <button class="secondaryAction" type="submit" name="action_send">{% trans 'Переслать верефикацию' %}</button>
+      <button class="secondaryAction" type="submit" name="action_send">{% trans 'Прислать подтверждение' %}</button>
       <button class="primaryAction" type="submit" name="action_remove">{% trans 'Удалить' %}</button>
     </div>
 

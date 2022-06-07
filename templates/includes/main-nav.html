@@ -47,8 +47,12 @@
                 Новости компании
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="furniture-link">
+                {% if request.user.is_authenticated %}
                 <a href="{% url 'blog' %}" class="dropdown-item">Все статьи</a>
-                <a href="{% url 'add_post' %}" class="dropdown-item">Добавить статью</a>
+                    <a href="{% url 'add_post' %}" class="dropdown-item">Добавить статью</a>
+                     {% else %}
+                    <a href="{% url 'blog' %}" class="dropdown-item">Все статьи</a>
+                {% endif %}
             </div>
         </li>
     </ul>
