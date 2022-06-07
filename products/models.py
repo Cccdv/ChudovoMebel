@@ -59,3 +59,4 @@ class ProductReview(models.Model):
     class Meta:
         verbose_name_plural = "Отзывы на продукцию"
         verbose_name = "отзыв"
+
